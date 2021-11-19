@@ -15,7 +15,7 @@
     <p>
         <label for="iDescricao">Seleção de mesas:</label>
         <select name="nMesa" id="iMesa">
-            <?php echo lista_mesas();  ?>
+            <?php echo listar_mesas();  ?>
         </select>
     </p>
     <p>

@@ -1,7 +1,7 @@
 <?php
 
 //Preencher OPTIONS do um select mostrando todas as mesas---------------------------------------------------------------------------------------------
-function lista_mesas(){
+function listar_mesas(){
 
     
 
@@ -30,7 +30,7 @@ function lista_mesas(){
 
             //Validar dados 
             foreach($array as $campo){                    
-                  $lista .= '<option value="'.$campo['id_categoria'].'">'.$campo['descricao'].'</option>';
+                  $lista .= '<option value="'.$campo['id'].'">Mesa'.$campo['id'].'</option>';
             }
 
         
