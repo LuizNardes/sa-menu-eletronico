@@ -19,7 +19,7 @@
         </select>
     </p>
     <p>
-        <input type="submit" value="Selecionar>
+        <input type="submit" value="Selecionar">
     </p>
 </form>
 </body>
