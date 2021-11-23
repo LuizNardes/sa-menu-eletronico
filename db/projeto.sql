@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 19-Nov-2021 às 01:51
+-- Tempo de geração: 23-Nov-2021 às 23:18
 -- Versão do servidor: 10.4.8-MariaDB
 -- versão do PHP: 7.3.10
 
@@ -19,9 +19,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `restaurante`
+-- Banco de dados: `projeto`
 --
-CREATE DATABASE projeto;
 
 -- --------------------------------------------------------
 
@@ -58,7 +57,7 @@ CREATE TABLE `comandas` (
 
 CREATE TABLE `conta` (
   `id` int(10) UNSIGNED NOT NULL,
-  `mesa` int(10) UNSIGNED NOT NULL,
+  `id-mesa` int(10) UNSIGNED NOT NULL,
   `id-comanda` int(10) UNSIGNED NOT NULL,
   `situacao` char(1) NOT NULL,
   `data-inicio` datetime DEFAULT NULL COMMENT 'Data/hora de abertura da conta',
@@ -75,6 +74,14 @@ CREATE TABLE `mesas` (
   `id` int(10) UNSIGNED NOT NULL COMMENT 'ID e Número da mesa',
   `descricao` text NOT NULL COMMENT 'Descrição da mesa'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `mesas`
+--
+
+INSERT INTO `mesas` (`id`, `descricao`) VALUES
+(1, 'Mesa 01'),
+(2, 'Mesa 02');
 
 -- --------------------------------------------------------
 
@@ -139,7 +146,7 @@ ALTER TABLE `comandas`
 --
 ALTER TABLE `conta`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `mesa` (`mesa`);
+  ADD KEY `mesa` (`id-mesa`);
 
 --
 -- Índices para tabela `mesas`
@@ -185,6 +192,12 @@ ALTER TABLE `conta`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de tabela `mesas`
+--
+ALTER TABLE `mesas`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID e Número da mesa', AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
@@ -218,7 +231,7 @@ ALTER TABLE `comandas`
 -- Limitadores para a tabela `conta`
 --
 ALTER TABLE `conta`
-  ADD CONSTRAINT `conta_ibfk_1` FOREIGN KEY (`mesa`) REFERENCES `mesas` (`id`);
+  ADD CONSTRAINT `conta_ibfk_1` FOREIGN KEY (`id-mesa`) REFERENCES `mesas` (`id`);
 
 --
 -- Limitadores para a tabela `produtos`
