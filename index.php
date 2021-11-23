@@ -11,7 +11,7 @@
     <title>Comanda Eletrônica</title>
 </head>
 <body>
-    <form method="POST" action="php/comanda.php">
+    <form method="POST" action="comanda.php">
     <p>
         <label for="iDescricao">Seleção de mesas:</label>
         <select name="nMesa" id="iMesa">
