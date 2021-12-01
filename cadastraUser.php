@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="extensao.css"/>
 
 </head>
-    <form method="POST" action="salva_usuario.php">
+    <form method="POST" action="php/salvaUser.php">
         <div>
             <label for="iNome">Nome: </label>
             <input type="text" id="iNome" name="nNome">

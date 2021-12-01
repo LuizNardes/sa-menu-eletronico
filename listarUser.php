@@ -12,7 +12,7 @@
   <body >
     <nav class="p-3 mb-2 bg-dark text-white navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <img class="rounded-circle" src="img/logo2.0.jpeg" alt="logo da loja">
+            <img class="rounded-circle" src="dist/images/logo2.0.jpeg" alt="logo da loja">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -29,7 +29,7 @@
                   Usuarios
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="verificar_usu.php">Verificar</a></li>
+                  <li><a class="dropdown-item" href="listarUser.php">Listar</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="#">Adicionar</a></li>
                   <li><hr class="dropdown-divider"></li>
@@ -74,23 +74,28 @@
         </div>
       </nav>
 <br><br><br>
+<form method="POST" action="php/consultaUser.php">
         <div class="container-fluid d-flex justify-content-center">
             <div class="row gx-5">
                 <div class="col-3 text-center">
                     <label for="vName">Nome</label>
-                    <input class="form-control " type="text" id="vName" placeholder="Cesar">
+                    <input class="form-control " type="text" name="nNome" id="vName" placeholder="Cesar">
                 </div>
                 <div class="col-3 text-center">
-                    <label for="vEmail">Email</label>
-                    <input class="form-control " type="text" id="vEmail" placeholder="Cesar@gmail.com">
+                    <label for="vEmail">Matrícula</label>
+                    <input class="form-control " type="text" name="nId" id="vEmail" placeholder="Cesar@gmail.com">
                 </div>
                 <div class="col-3 text-center">
                     <label for="vTipo">Tipo</label>
-                    <input class="form-control " type="text" id="vTipo" placeholder="Administrador">
+                    <select name="nTipo" id="iCategorias">
+                      <option value="1">Administrador</option>
+                      <option value="2">Garçom</option>
+                    </select>   
                 </div>
                 <div class="col-3 p-4">
                     <button class="btn bg-dark text-white">Consultar</button>
                 </div>
+</form>              
         </div>
 
 

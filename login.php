@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="extensao.css"/>
 
 </head>
-    <form method="POST" action="validaLogin.php">
+    <form method="POST" action="php/validaLogin.php">
         <div>
             <label for="iLogin">Usuário: </label>
             <input type="email" id="iLogin" name="nLogin">
@@ -24,7 +24,7 @@
         <p>
         <div>
             <button type="submit" name="lg" >Login</button>
-            <a href="cadastro.php"><button type="button" name="cad">Cadastro</button></a>
+            <a href="php/cadastro.php"><button type="button" name="cad">Cadastro</button></a>
         </div>
     </form>
 

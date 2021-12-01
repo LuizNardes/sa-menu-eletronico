@@ -13,7 +13,7 @@
     <title>Document</title>
 </head>
 <body>
-<form method="POST" action="functionProdutos.php">
+<form method="POST" action="php/functionProdutos.php">
         <div>
             <label for="iNome">Nome: </label>
             <input type="text" id="iNome" name="nNome">

@@ -19,7 +19,7 @@
 			$_SESSION['usuarioNiveisAcessoId'] = $resultado['tipo-usuario'];
 			$_SESSION['usuarioEmail'] = $resultado['email'];
 			if($_SESSION['usuarioNiveisAcessoId'] == "1"){
-				header("Location: ./Administrador/administrativo.html");
+				header("Location: ../administrativo.php");
 			}elseif($_SESSION['usuarioNiveisAcessoId'] == "2"){
 				header("Location: funcionario.php");
 			}
@@ -28,11 +28,11 @@
 		}else{	
 			//Váriavel global recebendo a mensagem de erro
 			$_SESSION['loginErro'] = "Usuário ou senha Inválido";
-			header("Location: index.php");
+			header("Location: ../index.php");
 		}
 	//O campo usuário e senha não preenchido entra no else e redireciona o usuário para a página de login
 	}else{
 		$_SESSION['loginErro'] = "Usuário ou senha inválido";
-		header("Location: index.php");
+		header("Location: ../index.php");
 	}
 ?>
