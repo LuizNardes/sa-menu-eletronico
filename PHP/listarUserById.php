@@ -1,21 +1,25 @@
 <?php
 
+//Função para buscar nome do user -----------------------------------------------------------------------------------
+function nomeUser($id){
 
-function descricaoUser(){
 
-//Conexão ao BD
-include("conexao.php");
+    //Conexão ao BD
+    include("conexao.php");
 
 
     //Montar meu comando SQL
-    $sql = "SELECT * FROM tipo_usuario;" ;    
+    $sql = "SELECT * FROM usuarios WHERE id = $id" ;    
+
+    // var_dump($sql);
+    // die();
 
     $result = mysqli_query($conn, $sql); 
     mysqli_close($conn);    
 
-     $lista = "";
+    $nome ="";
     //Valida se retornou linha
-    if(mysqli_num_rows($result) > 0){       
+    if (mysqli_num_rows($result) > 0){       
 
             //Array para receber os $result
             $array = array();
@@ -28,13 +32,19 @@ include("conexao.php");
 
             //Validar dados 
             foreach($array as $campo){                    
-                  $lista .= '<option value="'.$campo['id'].'">'.$campo['tipo'].'</option>';
+                  $nome = $campo['nome'];
             }
 
         
     }
 
-    return $lista; 
+    return $nome; 
 }
+
+
+
+
+
+
 
 ?>

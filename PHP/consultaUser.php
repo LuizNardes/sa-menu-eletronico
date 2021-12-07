@@ -35,7 +35,7 @@ $tipo = $_POST["nTipo"];
         .$whereNOME
         .$whereID;     
         
-        
+  
 
         $result = mysqli_query($conn, $sql); 
         mysqli_close($conn);    
@@ -47,6 +47,8 @@ $tipo = $_POST["nTipo"];
          ."<tread><tr><th>ID</th><th>NOME</th>"
          ."<th>TIPO USUÁRIO</th>"
          ."<th>AÇÕES</th></tr><tread>";
+
+
         //Valida se retornou linha
         if(mysqli_num_rows($result) > 0){       
     
@@ -61,7 +63,7 @@ $tipo = $_POST["nTipo"];
                 array_push($array,$linha);
                 }
                 
-                include('listarTipoUser.php');
+                include('listarTipoUserByID.php');
 
                 
                 //Validar dados 
@@ -70,7 +72,7 @@ $tipo = $_POST["nTipo"];
 
                 $lista .= "<tr><td>".$campo['id'] 
                 . "</td> <td> " . $campo['nome'] 
-                . "</td><td>" . descricaoUser($campo['tipo_usuario']) 
+                . "</td><td>" . descricaoUserByID($campo['tipo_usuario']) 
                 . "</td><td>"
                 ."<a href='../alteraUser.php?id=".$campo['id']."' >Alterar</a> "
                 ."</td></tr>";
@@ -80,55 +82,4 @@ $tipo = $_POST["nTipo"];
         }
     
         echo $lista; 
-   
-
-
-
-//Função para buscar nome do user -----------------------------------------------------------------------------------
-function nomeUser($id){
-
-
-    //Conexão ao BD
-    include("conexao.php");
-
-
-    //Montar meu comando SQL
-    $sql = "SELECT * FROM usuarios WHERE id = $id" ;    
-
-    // var_dump($sql);
-    // die();
-
-    $result = mysqli_query($conn, $sql); 
-    mysqli_close($conn);    
-
-    $nome ="";
-    //Valida se retornou linha
-    if (mysqli_num_rows($result) > 0){       
-
-            //Array para receber os $result
-            $array = array();
-
-            //Descarregar dados no array
-            while($linha = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-                //Gravação no array
-                array_push($array,$linha);
-            }
-
-            //Validar dados 
-            foreach($array as $campo){                    
-                  $nome = $campo['nome'];
-            }
-
-        
-    }
-
-    return $nome; 
-}
-
-
-
-
-
-
-
-?>
+ ?>  

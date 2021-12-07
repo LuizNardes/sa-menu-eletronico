@@ -78,16 +78,16 @@
         <div class="container-fluid d-flex justify-content-center">
             <div class="row gx-5">
                 <div class="col-3 text-center">
-                    <label for="vName">Nome</label>
-                    <input class="form-control " type="text" name="nNome" id="vName" placeholder="Cesar">
+                    <label for="iName">Nome</label>
+                    <input class="form-control " type="text" name="nName" id="iName" placeholder="Cesar">
                 </div>
                 <div class="col-3 text-center">
-                    <label for="vEmail">Matrícula</label>
-                    <input class="form-control " type="text" name="nId" id="vEmail" placeholder="Cesar@gmail.com">
+                    <label for="iId">Matrícula</label>
+                    <input class="form-control " type="text" name="nId" id="iId" placeholder="Cesar@gmail.com">
                 </div>
                 <div class="col-3 text-center">
-                    <label for="vTipo">Tipo</label>
-                    <select name="nTipo" id="iCategorias">
+                    <label for="iTipo">Tipo</label>
+                    <select name="nTipo" id="iTipo">
                       <option value="1">Administrador</option>
                       <option value="2">Garçom</option>
                     </select>   

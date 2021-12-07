@@ -1,7 +1,7 @@
 <?php
   
 
-    $nome = $_POST['nNome'];
+    $nome = $_POST['nName'];
     $qtd = $_POST['nQtd'];
     $desc = $_POST['nDesc'];
     $preco = $_POST['nPreco'];

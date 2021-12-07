@@ -1,6 +1,6 @@
 <?php
 
-    $nome = $_POST['nNome'];
+    $nome = $_POST['nName'];
     $data_nasc = $_POST['nDtNasc'];
     $login = $_POST['nLogin'];
     $senha = $_POST['nSenha'];
