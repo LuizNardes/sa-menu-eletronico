@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 07-Dez-2021 às 23:55
+-- Tempo de geração: 08-Dez-2021 às 01:56
 -- Versão do servidor: 10.4.8-MariaDB
 -- versão do PHP: 7.3.10
 
@@ -127,10 +127,10 @@ CREATE TABLE `produtos` (
 --
 
 INSERT INTO `produtos` (`id`, `nome`, `qtd`, `descricao`, `preco`, `id_categoria`, `imagem`) VALUES
-(1, 'Coca Cola 2lt', 's', 'Refrigerante Coca-Cola 2 litros', 12, 4, ''),
-(2, 'Heineken', 's', 'Cerveja litro 600 ml Heineken', 14, 1, ''),
-(3, 'Tech Burger', 's', 'Hamburguer de 180g de picanha, pão, bacon e queijo cheddar, acompanha fritas.', 32, 2, ''),
-(4, 'Petit gateau', 's', 'Bolo de chocolate com casca crocante, recheio de chocolate, acompanha sorvete de creme.', 18, 3, '');
+(1, 'Coca Cola', 's', 'Refrigerante Coca-Cola lata 355ml', 6, 4, ''),
+(2, 'Ipa Element', 's', 'Chopp Ipa, com amargor moderado.', 20, 1, ''),
+(3, 'Tech Burger', 's', 'Delicioso Hamburguer caseiro de picanha de 180g, pão e queijo cheddar, maionese da casa.', 29, 2, ''),
+(4, 'Petit gateau', 's', 'Bolo crocante, com recheio de chocolate, acompanha sorvete de baunilha.', 27, 3, '');
 
 -- --------------------------------------------------------
 
