@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 23-Nov-2021 às 23:18
+-- Tempo de geração: 07-Dez-2021 às 23:55
 -- Versão do servidor: 10.4.8-MariaDB
 -- versão do PHP: 7.3.10
 
@@ -21,7 +21,7 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `projeto`
 --
-CREATE DATABASE projeto;
+
 -- --------------------------------------------------------
 
 --
@@ -30,8 +30,18 @@ CREATE DATABASE projeto;
 
 CREATE TABLE `categorias` (
   `id` int(10) UNSIGNED NOT NULL COMMENT 'ID da categoria',
-  `nome-categoria` varchar(30) DEFAULT NULL COMMENT 'Nome da categoria'
+  `nome_categoria` varchar(30) DEFAULT NULL COMMENT 'Nome da categoria'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `categorias`
+--
+
+INSERT INTO `categorias` (`id`, `nome_categoria`) VALUES
+(1, 'bebidas_alcoolicas'),
+(2, 'lanches'),
+(3, 'sobremesa'),
+(4, 'bebidas');
 
 -- --------------------------------------------------------
 
@@ -41,13 +51,19 @@ CREATE TABLE `categorias` (
 
 CREATE TABLE `comandas` (
   `id` int(10) UNSIGNED NOT NULL COMMENT 'Número da comanda',
-  `id-conta` int(10) UNSIGNED NOT NULL,
-  `id-produto` int(10) UNSIGNED NOT NULL,
-  `id-usuario` int(10) UNSIGNED NOT NULL,
+  `id_produto` int(10) UNSIGNED NOT NULL,
+  `id_usuario` int(10) UNSIGNED NOT NULL,
   `quantidade` int(10) UNSIGNED DEFAULT NULL,
-  `data-incio` datetime NOT NULL COMMENT 'Data e hora de lançamento do pedido ',
-  `data-fim` int(11) NOT NULL COMMENT 'Data e hora de entrega do pedido na mesa '
+  `data_incio` datetime NOT NULL COMMENT 'Data e hora de lançamento do pedido ',
+  `data_fim` datetime NOT NULL COMMENT 'Data e hora de entrega do pedido na mesa '
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `comandas`
+--
+
+INSERT INTO `comandas` (`id`, `id_produto`, `id_usuario`, `quantidade`, `data_incio`, `data_fim`) VALUES
+(2, 3, 2, 1, '2021-12-07 20:21:00', '2021-12-07 20:48:06');
 
 -- --------------------------------------------------------
 
@@ -57,12 +73,19 @@ CREATE TABLE `comandas` (
 
 CREATE TABLE `conta` (
   `id` int(10) UNSIGNED NOT NULL,
-  `id-mesa` int(10) UNSIGNED NOT NULL,
-  `id-comanda` int(10) UNSIGNED NOT NULL,
-  `situacao` char(1) NOT NULL,
-  `data-inicio` datetime DEFAULT NULL COMMENT 'Data/hora de abertura da conta',
-  `data-fim` int(11) NOT NULL COMMENT 'Data/hora de fechamento da conta'
+  `id_mesa` int(10) UNSIGNED NOT NULL,
+  `id_comanda` int(10) UNSIGNED NOT NULL,
+  `situacao` char(1) NOT NULL COMMENT '"A" para conta aberta e "F" para conta fechada',
+  `data_inicio` datetime DEFAULT NULL COMMENT 'Data/hora de abertura da conta',
+  `data_fim` datetime NOT NULL COMMENT 'Data/hora de fechamento da conta'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `conta`
+--
+
+INSERT INTO `conta` (`id`, `id_mesa`, `id_comanda`, `situacao`, `data_inicio`, `data_fim`) VALUES
+(1, 1, 2, 'A', '2021-12-07 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -95,20 +118,38 @@ CREATE TABLE `produtos` (
   `qtd` char(1) DEFAULT NULL COMMENT 'Disponibilidade do produto sendo "S" para disponível "N" para indisponível',
   `descricao` text DEFAULT NULL COMMENT 'Breve descrição do produto',
   `preco` int(10) UNSIGNED NOT NULL COMMENT 'Preço do produto',
-  `id-categoria` int(10) UNSIGNED NOT NULL COMMENT 'ID da categoria do produto',
+  `id_categoria` int(10) UNSIGNED NOT NULL COMMENT 'ID da categoria do produto',
   `imagem` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `produtos`
+--
+
+INSERT INTO `produtos` (`id`, `nome`, `qtd`, `descricao`, `preco`, `id_categoria`, `imagem`) VALUES
+(1, 'Coca Cola 2lt', 's', 'Refrigerante Coca-Cola 2 litros', 12, 4, ''),
+(2, 'Heineken', 's', 'Cerveja litro 600 ml Heineken', 14, 1, ''),
+(3, 'Tech Burger', 's', 'Hamburguer de 180g de picanha, pão, bacon e queijo cheddar, acompanha fritas.', 32, 2, ''),
+(4, 'Petit gateau', 's', 'Bolo de chocolate com casca crocante, recheio de chocolate, acompanha sorvete de creme.', 18, 3, '');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tipo-usuario`
+-- Estrutura da tabela `tipo_usuario`
 --
 
-CREATE TABLE `tipo-usuario` (
+CREATE TABLE `tipo_usuario` (
   `id` int(11) UNSIGNED NOT NULL COMMENT 'ID do tipo de usuário',
   `tipo` varchar(20) NOT NULL COMMENT 'Tipo/Nível de usuário '
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `tipo_usuario`
+--
+
+INSERT INTO `tipo_usuario` (`id`, `tipo`) VALUES
+(1, 'administrador'),
+(2, 'garçom');
 
 -- --------------------------------------------------------
 
@@ -119,8 +160,16 @@ CREATE TABLE `tipo-usuario` (
 CREATE TABLE `usuarios` (
   `id` int(10) UNSIGNED NOT NULL COMMENT 'ID do usuário ',
   `nome` varchar(30) NOT NULL COMMENT 'Nome do usuário',
-  `tipo-usuario` int(10) UNSIGNED NOT NULL COMMENT 'ID do tipo e nível de acesso do de usuário'
+  `tipo_usuario` int(10) UNSIGNED NOT NULL COMMENT 'ID do tipo e nível de acesso do de usuário'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `nome`, `tipo_usuario`) VALUES
+(1, 'luiz.nardes', 1),
+(2, 'suelen.lima', 2);
 
 --
 -- Índices para tabelas despejadas
@@ -137,16 +186,16 @@ ALTER TABLE `categorias`
 --
 ALTER TABLE `comandas`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `id-conta` (`id-conta`),
-  ADD KEY `id-produto` (`id-produto`),
-  ADD KEY `id-usuario` (`id-usuario`);
+  ADD KEY `id-produto` (`id_produto`),
+  ADD KEY `id-usuario` (`id_usuario`);
 
 --
 -- Índices para tabela `conta`
 --
 ALTER TABLE `conta`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `mesa` (`id-mesa`);
+  ADD KEY `mesa` (`id_mesa`),
+  ADD KEY `id_comanda` (`id_comanda`);
 
 --
 -- Índices para tabela `mesas`
@@ -159,12 +208,12 @@ ALTER TABLE `mesas`
 --
 ALTER TABLE `produtos`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `id-categoria` (`id-categoria`);
+  ADD KEY `id-categoria` (`id_categoria`);
 
 --
--- Índices para tabela `tipo-usuario`
+-- Índices para tabela `tipo_usuario`
 --
-ALTER TABLE `tipo-usuario`
+ALTER TABLE `tipo_usuario`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `tipo` (`tipo`);
 
@@ -173,23 +222,29 @@ ALTER TABLE `tipo-usuario`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `tipo-usuario` (`tipo-usuario`);
+  ADD KEY `tipo-usuario` (`tipo_usuario`);
 
 --
 -- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
+-- AUTO_INCREMENT de tabela `categorias`
+--
+ALTER TABLE `categorias`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID da categoria', AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT de tabela `comandas`
 --
 ALTER TABLE `comandas`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Número da comanda';
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Número da comanda', AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `conta`
 --
 ALTER TABLE `conta`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `mesas`
@@ -201,19 +256,19 @@ ALTER TABLE `mesas`
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID do produto ';
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID do produto ', AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT de tabela `tipo-usuario`
+-- AUTO_INCREMENT de tabela `tipo_usuario`
 --
-ALTER TABLE `tipo-usuario`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID do tipo de usuário';
+ALTER TABLE `tipo_usuario`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID do tipo de usuário', AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID do usuário ';
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID do usuário ', AUTO_INCREMENT=3;
 
 --
 -- Restrições para despejos de tabelas
@@ -223,27 +278,27 @@ ALTER TABLE `usuarios`
 -- Limitadores para a tabela `comandas`
 --
 ALTER TABLE `comandas`
-  ADD CONSTRAINT `comandas_ibfk_1` FOREIGN KEY (`id-conta`) REFERENCES `conta` (`id`),
-  ADD CONSTRAINT `comandas_ibfk_2` FOREIGN KEY (`id-produto`) REFERENCES `produtos` (`id`),
-  ADD CONSTRAINT `comandas_ibfk_3` FOREIGN KEY (`id-usuario`) REFERENCES `usuarios` (`id`);
+  ADD CONSTRAINT `comandas_ibfk_2` FOREIGN KEY (`id_produto`) REFERENCES `produtos` (`id`),
+  ADD CONSTRAINT `comandas_ibfk_3` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`);
 
 --
 -- Limitadores para a tabela `conta`
 --
 ALTER TABLE `conta`
-  ADD CONSTRAINT `conta_ibfk_1` FOREIGN KEY (`id-mesa`) REFERENCES `mesas` (`id`);
+  ADD CONSTRAINT `conta_ibfk_1` FOREIGN KEY (`id_comanda`) REFERENCES `comandas` (`id`),
+  ADD CONSTRAINT `conta_ibfk_2` FOREIGN KEY (`id_mesa`) REFERENCES `mesas` (`id`);
 
 --
 -- Limitadores para a tabela `produtos`
 --
 ALTER TABLE `produtos`
-  ADD CONSTRAINT `produtos_ibfk_1` FOREIGN KEY (`id-categoria`) REFERENCES `categorias` (`id`);
+  ADD CONSTRAINT `produtos_ibfk_1` FOREIGN KEY (`id_categoria`) REFERENCES `categorias` (`id`);
 
 --
 -- Limitadores para a tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`tipo-usuario`) REFERENCES `tipo-usuario` (`id`);
+  ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`tipo_usuario`) REFERENCES `tipo_usuario` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
