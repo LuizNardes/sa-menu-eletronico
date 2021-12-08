@@ -35,7 +35,7 @@ $tipo = $_POST["nTipo"];
         .$whereNOME
         .$whereID;     
         
-  
+
 
         $result = mysqli_query($conn, $sql); 
         mysqli_close($conn);    
@@ -75,6 +75,7 @@ $tipo = $_POST["nTipo"];
                 . "</td><td>" . descricaoUserByID($campo['tipo_usuario']) 
                 . "</td><td>"
                 ."<a href='../alteraUser.php?id=".$campo['id']."' >Alterar</a> "
+                ." / <a href='deleteUser.php?id=".$campo['id']."'>Excluir</a>"
                 ."</td></tr>";
 
                 }
