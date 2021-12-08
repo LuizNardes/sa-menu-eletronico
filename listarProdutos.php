@@ -165,7 +165,7 @@ if(isset($_GET['vName']) or isset($_GET['vId'])){
             }
 
             foreach($array as $row){
-              switch ($row['categorias_id']) {
+              switch ($row['id_categoria']) {
                 case 1:
                     $tipo = "Lanches";
                     break;
