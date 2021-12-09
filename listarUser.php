@@ -33,7 +33,7 @@ include('php/listarTipoUser.php')
                   Usuarios
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="listaUser.php">Verificar</a></li>
+                  <li><a class="dropdown-item" href="listarUser.php">Verificar</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="#">Adicionar</a></li>              
                 </ul>
