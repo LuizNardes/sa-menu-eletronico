@@ -1,21 +1,25 @@
 <?php
 
+//Função para buscar DESCRIÇÃO do user por ID -----------------------------------------------------------------------------------
+function descricaoCategoriaByID($id){
 
-function listarCategorias(){
 
-//Conexão ao BD
-include("conexao.php");
+    //Conexão ao BD
+    include("conexao.php");
 
 
     //Montar meu comando SQL
-    $sql = "SELECT * FROM categorias;" ;    
+    $sql = "SELECT * FROM categorias WHERE id = $id";    
+
+    // var_dump($sql);
+    // die();
 
     $result = mysqli_query($conn, $sql); 
     mysqli_close($conn);    
 
-     $lista = "";
+    $tipo_user ="";
     //Valida se retornou linha
-    if(mysqli_num_rows($result) > 0){       
+    if (mysqli_num_rows($result) > 0){       
 
             //Array para receber os $result
             $array = array();
@@ -28,13 +32,14 @@ include("conexao.php");
 
             //Validar dados 
             foreach($array as $campo){                    
-                  $lista .= '<option value="'.$campo['id'].'">'.$campo['nome_categoria'].'</option>';
+                  $tipo_user = $campo['nome_categoria'];
             }
 
         
     }
 
-    return $lista; 
+    return $tipo_user; 
 }
+
 
 ?>

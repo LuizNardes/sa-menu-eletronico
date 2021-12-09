@@ -1,3 +1,7 @@
+<?php
+include('php/listarTipoUser.php')
+?>  
+
 <!doctype html>
 <html lang="pt-br">
   <head>
@@ -29,11 +33,9 @@
                   Usuarios
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="listarUser.php">Listar</a></li>
+                  <li><a class="dropdown-item" href="listaUser.php">Verificar</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Adicionar</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Excluir</a></li>
+                  <li><a class="dropdown-item" href="#">Adicionar</a></li>              
                 </ul>
               </li>
 
@@ -42,11 +44,9 @@
                   Produtos
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Verificar</a></li>
+                  <li><a class="dropdown-item" href="listarProdutos.php">Verificar</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="#">Adicionar</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Excluir</a></li>
                 </ul>
               </li>
 
@@ -67,37 +67,165 @@
             </ul>
             <ul class="nav">
                 <li class="nav-item">
-                    <a class="text-white nav-link " href="sair.php" tabindex="-1" >Sair</a>
+                    <a class="text-white nav-link " href="php/sair.php" tabindex="-1" >Sair</a>
                   </li>
             </ul>
           </div>
         </div>
       </nav>
 <br><br><br>
-<form method="POST" action="php/consultaUser.php">
+<form action="#" method="GET">
         <div class="container-fluid d-flex justify-content-center">
             <div class="row gx-5">
-                <div class="col-3 text-center">
-                    <label for="iName">Nome</label>
-                    <input class="form-control " type="text" name="nName" id="iName" placeholder="Cesar">
-                </div>
-                <div class="col-3 text-center">
-                    <label for="iId">Matrícula</label>
-                    <input class="form-control " type="text" name="nId" id="iId" placeholder="Cesar@gmail.com">
-                </div>
-                <div class="col-3 text-center">
-                    <label for="iTipo">Tipo</label>
-                    <select name="nTipo" id="iTipo">
-                      <option value="1">Administrador</option>
-                      <option value="2">Garçom</option>
-                    </select>   
-                </div>
-                <div class="col-3 p-4">
-                    <button class="btn bg-dark text-white">Consultar</button>
-                </div>
-</form>              
-        </div>
+                  <div class="col-3 text-center">
+                      <label for="iID">ID</label>
+                      <input class="form-control " type="text" name="nID" id="iID">
+                  </div>
+                  <div class="col-3 text-center">
+                      <label for="iName">Nome</label>
+                      <input class="form-control " type="text" name="nName" id="iNome">
+                  </div>
+                  <div class="col-3 text-center">
+                      <label for="iTipo">Tipo</label>
+                      <select class="form-select" name="nTipo" id="iTipo">
+                        <option value="">Tipo</option>
+                        <?php echo descricaoUser(); ?>
+                      </select>
+                      
+                  </div>
+                  <div class="col-3 p-4">
+                      <button class="btn bg-dark text-white" href="">Consultar</button>
+            </div>
+</form>
+            <div class="table-responsive">
+            
+            <table class='table table-dark' style="margin-top:10vh;">
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Tipo usuario</th>
+            <th>Ações</th>
+        </tr>
+    
 
+
+<?php
+
+include('php/listarTipoUserByID.php');
+
+$whereId = "";
+$whereName = "";
+$whereTipo = "";
+
+if(isset($_GET['nName']) or isset($_GET['nID'])){
+
+        include 'php/conexao.php';
+        
+
+        if ($_GET['nID'] != "") {
+
+          $whereId = " AND usuarios.id = ".$_GET['nID'];
+
+        }
+
+      if ($_GET['nName'] != "")  {
+
+  
+          $whereName = " AND usuarios.nome LIKE '%".$_GET['nName']."%' ";
+
+      }
+      
+      if ($_GET['nTipo'] != "") {
+
+          $whereTipo = " AND usuarios.tipo_usuario = ".$_GET['nTipo'];
+      
+      }
+
+     
+
+      $sql = "SELECT * FROM usuarios 
+      INNER JOIN tipo_usuario 
+      ON (usuarios.id = tipo_usuario.id) 
+      WHERE 1 = 1 "
+      .$whereId
+      .$whereName
+      .$whereTipo;
+        
+        $result = mysqli_query($conn, $sql);
+        mysqli_close($conn);
+
+        if(mysqli_num_rows($result) > 0){
+            $array = [];
+
+            while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
+            array_push($array,$row);
+            }
+
+            foreach($array as $row){
+      
+
+            echo "<tr>
+                    <th>". $row['id'] ."</th>
+                    <th>". $row['nome'] ."</th>
+                    <th>". descricaoUserByID($row['tipo_usuario']) ."</th>
+                    <th><a href='php/deleteProduto.php?id=".$row['id']."'>Excluir</a></th>
+                </tr>";
+            }
+        }else{
+            echo "
+            <tr>
+                <th>Sem dados</th>
+                <th>Sem dados</th>
+                <th>Sem dados</th>
+                <th>Sem dados</th>
+            </tr>";
+        }
+      }
+   else{
+
+        $sql = "SELECT * FROM usuarios INNER JOIN tipo_usuario ON (usuarios.id = tipo_usuario.id ) WHERE usuarios.nome LIKE '%"."%';";
+    
+       
+    
+        include 'php/conexao.php';
+    
+        $result = mysqli_query($conn, $sql);
+            mysqli_close($conn);
+    
+            if(mysqli_num_rows($result) > 0){
+                $array = [];
+    
+                while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
+                array_push($array,$row);
+                }
+    
+                foreach($array as $row){
+    
+                echo "<tr>
+                        <th>". $row['id'] ."</th>
+                        <th>". $row['nome'] ."</th>
+                        <th>". descricaoUserByID($row['tipo_usuario']) ."</th>
+                        <th><a href='php/deleteProduto.php?id=".$row['id']."'>Excluir</a></th>
+                    </tr>";
+                }
+            }else{
+                echo "
+                <tr>
+                    <th>Sem dados</th>
+                    <th>Sem dados</th>
+                    <th>Sem dados</th>
+                    <th>Sem dados</th>
+                </tr>";
+            }
+    
+    }
+
+?>
+
+</table>
+
+            </div>
+        </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
