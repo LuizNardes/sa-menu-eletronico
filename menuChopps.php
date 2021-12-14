@@ -21,45 +21,45 @@
     <main class="container">
         <section class="products-container">
             <div class="card">
-                <div class="product-image" id="img-6"></div>
-                <h3>1</h3>
-                <p>...</p>
-                <p>R$ <span class="bold">R$ </span></p>
+                <div class="product-image" id="chopp-1"></div>
+                <h3>Pills Wine</h3>
+                <p>Um Chopp de vinho para ninguém colocar defeito.</p>
+                <p>R$ <span class="bold"> 15,90 </span></p>
                 <a href="#" class="botao">Comprar</a>
             </div>
             <div class="card">
-                <div class="product-image" id="img-6"></div>
-                <h3>1</h3>
-                <p>...</p>
-                <p>R$ <span class="bold">R$ </span></p>
+                <div class="product-image" id="chopp-2"></div>
+                <h3>Id Weiss</h3>
+                <p>Chopp de Trigo levemente frutado, perfeito para uma segunda-feira.</p>
+                <p>R$ <span class="bold"> 16,90 </span></p>
                 <a href="#" class="botao">Comprar</a>
             </div>
             <div class="card">
-                <div class="product-image" id="img-6"></div>
-                <h3>1</h3>
-                <p>...</p>
-                <p>R$ <span class="bold">R$ </span></p>
+                <div class="product-image" id="chopp-3"></div>
+                <h3>Ipa Element</h3>
+                <p>Chopp com uma textura encorpada ideal para pedir junto com Java Monster, fica a dica!</p>
+                <p>R$ <span class="bold"> 19,90 </span></p>
                 <a href="#" class="botao">Comprar</a>
             </div>
             <div class="card">
-                <div class="product-image" id="img-6"></div>
-                <h3>1</h3>
-                <p>...</p>
-                <p>R$ <span class="bold">R$ </span></p>
+                <div class="product-image" id="chopp-4"></div>
+                <h3>Chopp 4</h3>
+                <p>Cerveja é bom com...</p>
+                <p>R$ <span class="bold">... </span></p>
                 <a href="#" class="botao">Comprar</a>
             </div>
             <div class="card">
-                <div class="product-image" id="img-6"></div>
-                <h3>1</h3>
-                <p>...</p>
-                <p>R$ <span class="bold">R$ </span></p>
+                <div class="product-image" id="chopp-5"></div>
+                <h3>Chopp 5</h3>
+                <p>Cerveja é bom porque...</p>
+                <p>R$ <span class="bold">... </span></p>
                 <a href="#" class="botao">Comprar</a>
             </div>
             <div class="card">
-                <div class="product-image" id="img-6"></div>
-                <h3>1</h3>
-                <p>...</p>
-                <p>R$ <span class="bold">R$ </span></p>
+                <div class="product-image" id="chopp-6"></div>
+                <h3>Chopp 6</h3>
+                <p>Hoje você merece tomar...</p>
+                <p>R$ <span class="bold">... </span></p>
                 <a href="#" class="botao">Comprar</a>
             </div>
             

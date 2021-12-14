@@ -21,44 +21,44 @@
     <main class="container">
         <section class="products-container">
             <div class="card">
-                <div class="product-image" id="img-4"></div>
-                <h3>1</h3>
-                <p>...</p>
+                <div class="product-image" id="drink-1"></div>
+                <h3>Mojito Success</h3>
+                <p>Coquetel a base de Rum branco, leva suco de limão, açucar e hortelã.</p>
+                <p>R$ <span class="bold"> 21,90 </span></p>
+                <a href="#" class="botao">Comprar</a>
+            </div>
+            <div class="card">
+                <div class="product-image" id="drink-2"></div>
+                <h3>Info Arco</h3>
+                <p>Coquetel a base de Vodka, suco de groselia e suco de limão.</p>
+                <p>R$ <span class="bold"> 21,90 </span></p>
+                <a href="#" class="botao">Comprar</a>
+            </div>
+            <div class="card">
+                <div class="product-image" id="drink-3"></div>
+                <h3>Strawberry Body</h3>
+                <p>Coquetel a base Cachaça, morango, suco e raspas de limão.</p>
+                <p>R$ <span class="bold"> 24,90 </span></p>
+                <a href="#" class="botao">Comprar</a>
+            </div>
+            <div class="card">
+                <div class="product-image" id="drink-4"></div>
+                <h3>Drink 4</h3>
+                <p>Experimente...</p>
                 <p>R$ <span class="bold">R$ </span></p>
                 <a href="#" class="botao">Comprar</a>
             </div>
             <div class="card">
-                <div class="product-image" id="img-4"></div>
-                <h3>1</h3>
-                <p>...</p>
+                <div class="product-image" id="drink-5"></div>
+                <h3>Drink 5</h3>
+                <p>O mais pedido pelas...</p>
                 <p>R$ <span class="bold">R$ </span></p>
                 <a href="#" class="botao">Comprar</a>
             </div>
             <div class="card">
-                <div class="product-image" id="img-4"></div>
-                <h3>1</h3>
-                <p>...</p>
-                <p>R$ <span class="bold">R$ </span></p>
-                <a href="#" class="botao">Comprar</a>
-            </div>
-            <div class="card">
-                <div class="product-image" id="img-4"></div>
-                <h3>1</h3>
-                <p>...</p>
-                <p>R$ <span class="bold">R$ </span></p>
-                <a href="#" class="botao">Comprar</a>
-            </div>
-            <div class="card">
-                <div class="product-image" id="img-4"></div>
-                <h3>1</h3>
-                <p>...</p>
-                <p>R$ <span class="bold">R$ </span></p>
-                <a href="#" class="botao">Comprar</a>
-            </div>
-            <div class="card">
-                <div class="product-image" id="img-4"></div>
-                <h3>1</h3>
-                <p>...</p>
+                <div class="product-image" id="drink-6"></div>
+                <h3>Drink 6</h3>
+                <p>Refrescante...</p>
                 <p>R$ <span class="bold">R$ </span></p>
                 <a href="#" class="botao">Comprar</a>
             </div>

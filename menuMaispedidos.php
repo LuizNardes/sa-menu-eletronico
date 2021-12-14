@@ -21,45 +21,45 @@
     <main class="container">
         <section class="products-container">
             <div class="card">
-                <div class="product-image" id="img-1"></div>
-                <h3>1</h3>
-                <p>...</p>
-                <p>R$ <span class="bold">R$ </span></p>
+                <div class="product-image" id="maisPedidos-1"></div>
+                <h3>Tech Burguer</h3>
+                <p>Delicioso Hamburguer caseiro de picanha de 180g, pão e queijo cheddar, maionese da casa.</p>
+                <p>R$ <span class="bold"> 28,90 </span></p>
                 <a href="#" class="botao">Comprar</a>
             </div>
             <div class="card">
-                <div class="product-image" id="img-2"></div>
-                <h3>1</h3>
-                <p>...</p>
-                <p>R$ <span class="bold">R$ </span></p>
+                <div class="product-image" id="maisPedidos-2"></div>
+                <h3>Java Monster</h3>
+                <p>Monstruoso Hamburguer caseiro de contra-filé de 180g, cebola caramelizada, bacon em tiras, maionese da casa.</p>
+                <p>R$ <span class="bold"> 31,90 </span></p>
                 <a href="#" class="botao">Comprar</a>
             </div>
             <div class="card">
-                <div class="product-image" id="img-3"></div>
-                <h3>1</h3>
-                <p>...</p>
-                <p>R$ <span class="bold">R$ </span></p>
+                <div class="product-image" id="maisPedidos-3"></div>
+                <h3>Mixed Class</h3>
+                <p>Um mistão pros friends, fritas, alcatra, frango, bacon, coração, calabreza, acompanha maionese da casa e molho especial.</p>
+                <p>R$ <span class="bold"> 79,90 </span></p>
                 <a href="#" class="botao">Comprar</a>
             </div>
             <div class="card">
-                <div class="product-image" id="img-4"></div>
-                <h3>1</h3>
-                <p>...</p>
-                <p>R$ <span class="bold">R$ </span></p>
+                <div class="product-image" id="maisPedidos-4"></div>
+                <h3>Mojito Success</h3>
+                <p>Coquetel a base de Rum branco, leva suco de limão, açucar e hortelã.</p>
+                <p>R$ <span class="bold"> 21,90 </span></p>
                 <a href="#" class="botao">Comprar</a>
             </div>
             <div class="card">
-                <div class="product-image" id="img-5"></div>
-                <h3>1</h3>
-                <p>...</p>
-                <p>R$ <span class="bold">R$ </span></p>
+                <div class="product-image" id="maisPedidos-5"></div>
+                <h3>Açaí</h3>
+                <p>Açai cremoso com até 3 complementos, escolha entre... .</p>
+                <p>R$ <span class="bold"> 19,00 </span></p>
                 <a href="#" class="botao">Comprar</a>
             </div>
             <div class="card">
-                <div class="product-image" id="img-6"></div>
-                <h3>1</h3>
-                <p>...</p>
-                <p>R$ <span class="bold">R$ </span></p>
+                <div class="product-image" id="maisPedidos-6"></div>
+                <h3>Id Weiss</h3>
+                <p>Chopp de Trigo levemente frutado, perfeito para uma segunda-feira.</p>
+                <p>R$ <span class="bold"> 16,90 </span></p>
                 <a href="#" class="botao">Comprar</a>
             </div>
             

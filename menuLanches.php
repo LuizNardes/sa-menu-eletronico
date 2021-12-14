@@ -21,45 +21,45 @@
     <main class="container">
         <section class="products-container">
             <div class="card">
-                <div class="product-image" id="img-1"></div>
-                <h3>1</h3>
-                <p>...</p>
-                <p>R$ <span class="bold">R$ </span></p>
+                <div class="product-image" id="lanches-1"></div>
+                <h3>Tech Burguer</h3>
+                <p>Delicioso Hamburguer caseiro de picanha de 180g, pão e queijo cheddar, maionese da casa.</p>
+                <p>R$ <span class="bold"> 28,90 </span></p>
                 <a href="#" class="botao">Comprar</a>
             </div>
             <div class="card">
-                <div class="product-image" id="img-2"></div>
-                <h3>1</h3>
-                <p>...</p>
-                <p>R$ <span class="bold">R$ </span></p>
+                <div class="product-image" id="lanches-2"></div>
+                <h3>CSS Salad</h3>
+                <p>Fantástico Hamburguer caseiro de 130g, alface, tomate, picles, queijo prato, maionese da casa.</p>
+                <p>R$ <span class="bold"> 24,90 </span></p>
                 <a href="#" class="botao">Comprar</a>
             </div>
             <div class="card">
-                <div class="product-image" id="img-1"></div>
-                <h3>1</h3>
-                <p>...</p>
-                <p>R$ <span class="bold">R$ </span></p>
+                <div class="product-image" id="lanches-3"></div>
+                <h3>Java Monster</h3>
+                <p>Monstruoso Hamburguer caseiro de contra-filé de 180g, cebola caramelizada, bacon em tiras, maionese da casa.</p>
+                <p>R$ <span class="bold"> 31,90 </span></p>
                 <a href="#" class="botao">Comprar</a>
             </div>
             <div class="card">
-                <div class="product-image" id="img-1"></div>
-                <h3>1</h3>
-                <p>...</p>
-                <p>R$ <span class="bold">R$ </span></p>
+                <div class="product-image" id="lanches-4"></div>
+                <h3>Hamburguer 4</h3>
+                <p>Maravilhoso...</p>
+                <p>R$ <span class="bold">... </span></p>
                 <a href="#" class="botao">Comprar</a>
             </div>
             <div class="card">
-                <div class="product-image" id="img-1"></div>
-                <h3>1</h3>
-                <p>...</p>
-                <p>R$ <span class="bold">R$ </span></p>
+                <div class="product-image" id="lanches-5"></div>
+                <h3>Hambruguer 5</h3>
+                <p>Top...</p>
+                <p>R$ <span class="bold">... </span></p>
                 <a href="#" class="botao">Comprar</a>
             </div>
             <div class="card">
-                <div class="product-image" id="img-1"></div>
-                <h3>1</h3>
-                <p>...</p>
-                <p>R$ <span class="bold">R$ </span></p>
+                <div class="product-image" id="lanches-6"></div>
+                <h3>Hamburguer 6</h3>
+                <p>Irresistível</p>
+                <p>R$ <span class="bold">... </span></p>
                 <a href="#" class="botao">Comprar</a>
             </div>
             

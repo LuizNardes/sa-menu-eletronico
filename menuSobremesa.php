@@ -21,43 +21,43 @@
     <main class="container">
         <section class="products-container">
             <div class="card">
-                <div class="product-image" id="img-5"></div>
-                <h3>1</h3>
+                <div class="product-image" id="sobremesa-1"></div>
+                <h3>Petit Gateau</h3>
+                <p>Bolo crocante, com recheio de chocolate, acompanha sorvete de baunilha.</p>
+                <p>R$ <span class="bold"> 26,90 </span></p>
+                <a href="#" class="botao">Comprar</a>
+            </div>
+            <div class="card">
+                <div class="product-image" id="sobremesa-3"></div>
+                <h3>Açaí</h3>
+                <p>Açai cremoso com até 3 complementos, escolha entre...</p>
+                <p>R$ <span class="bold"> 19,00 </span></p>
+                <a href="#" class="botao">Comprar</a>
+            </div>
+            <div class="card">
+                <div class="product-image" id="sobremesa-4"></div>
+                <h3>Pudim Rounded</h3>
+                <p>Pudim de leite, com calda de caramelo, um clássico que sempre é uma boa pedida.</p>
+                <p>R$ <span class="bold"> 14,90 </span></p>
+                <a href="#" class="botao">Comprar</a>
+            </div>
+            <div class="card">
+                <div class="product-image" id="sobremesa-2"></div>
+                <h3>Sobremesa 4</h3>
                 <p>...</p>
                 <p>R$ <span class="bold">R$ </span></p>
                 <a href="#" class="botao">Comprar</a>
             </div>
             <div class="card">
-                <div class="product-image" id="img-5"></div>
-                <h3>1</h3>
+                <div class="product-image" id="sobremesa-5"></div>
+                <h3>Sobremesa 5</h3>
                 <p>...</p>
                 <p>R$ <span class="bold">R$ </span></p>
                 <a href="#" class="botao">Comprar</a>
             </div>
             <div class="card">
-                <div class="product-image" id="img-5"></div>
-                <h3>1</h3>
-                <p>...</p>
-                <p>R$ <span class="bold">R$ </span></p>
-                <a href="#" class="botao">Comprar</a>
-            </div>
-            <div class="card">
-                <div class="product-image" id="img-5"></div>
-                <h3>1</h3>
-                <p>...</p>
-                <p>R$ <span class="bold">R$ </span></p>
-                <a href="#" class="botao">Comprar</a>
-            </div>
-            <div class="card">
-                <div class="product-image" id="img-5"></div>
-                <h3>1</h3>
-                <p>...</p>
-                <p>R$ <span class="bold">R$ </span></p>
-                <a href="#" class="botao">Comprar</a>
-            </div>
-            <div class="card">
-                <div class="product-image" id="img-6"></div>
-                <h3>1</h3>
+                <div class="product-image" id="sobremesa-6"></div>
+                <h3>Sobremesa 6</h3>
                 <p>...</p>
                 <p>R$ <span class="bold">R$ </span></p>
                 <a href="#" class="botao">Comprar</a>

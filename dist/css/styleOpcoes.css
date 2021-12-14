@@ -1,0 +1,233 @@
+/*Reset*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica;
+}
+
+/*cabeçalho*/
+
+/*variáveis de cores*/
+
+:root {
+    --main-bg-color: #faa307;
+    --main-text-color: #dc2f02;
+    --second-text-color: #f48c06;
+    --second-bg-color: #dc2f02;  
+}
+
+header {
+    background-color: var(--main-bg-color);
+    color:black;
+    padding: 15px;
+    border-bottom: 3px solid var(--second-bg-color);
+}
+
+header h1{
+    text-align: center;
+}
+
+/*grid de produtos*/
+
+.container {
+    background-color:#ffba08;
+    min-height: 60vh;
+    padding: 50px;
+}
+.products-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.card {
+    width: 31%;
+    display: inline-block;
+    margin: 1% 1%;
+    padding: 15px;
+}
+.product-image {
+    height: 300px;
+    width: 100%;
+    margin-bottom: 10px;
+    background-position: center;
+    background-size: cover;
+}
+
+#maisPedidos-1 {
+    background-image: url('../images/card_lanche1.jpeg');
+}
+#maisPedidos-2 {
+    background-image: url('../images/card_lanche3.jpg');
+}
+#maisPedidos-3 {
+    background-image: url('../images/card_porcao3.jpg');
+}
+#maisPedidos-4 {
+    background-image: url('../images/card_drink1.jpg');
+}
+#maisPedidos-5 {
+    background-image: url('../images/card_sobremesa2.jpg');
+}
+#maisPedidos-6 {
+    background-image: url('../images/card_chopp2.jpg');
+}
+#lanches-1 {
+    background-image: url('../images/card_lanche1.jpeg');
+}
+#lanches-2 {
+    background-image: url('../images/card_lanche2.jpg');
+}
+#lanches-3 {
+    background-image: url('../images/card_lanche3.jpg');
+}
+#lanches-4 {
+    background-image: url('../images/card_lanche4.jpg');
+}
+#lanches-5 {
+    background-image: url('../images/card_lanche5.jpg');
+}
+#lanches-6 {
+    background-image: url('../images/card_lanche6.jpg');
+}
+#porcoes-1 {
+    background-image: url('../images/card_porcao1.jpg');
+}
+#porcoes-2 {
+    background-image: url('../images/card_porcao2.jpg');
+}
+#porcoes-3 {
+    background-image: url('../images/card_porcao3.jpg');
+}
+#porcoes-4 {
+    background-image: url('../images/card_porcao4.jpg');
+}
+#porcoes-5 {
+    background-image: url('../images/card_porcao5.jpg');
+}
+#porcoes-6 {
+    background-image: url('../images/card_porcao6.jpg');
+}
+#drink-1 {
+    background-image: url('../images/card_drink1.jpg');
+}
+#drink-2 {
+    background-image: url('../images/card_drink2.jpg');
+}
+#drink-3 {
+    background-image: url('../images/card_drink3.png');
+}
+#drink-4 {
+    background-image: url('../images/card_drink4.jpg');
+}
+#drink-5 {
+    background-image: url('../images/card_drink5.jpg');
+}
+#drink-6 {
+    background-image: url('../images/card_drink6.jpg');
+}
+#chopp-1 {
+    background-image: url('../images/card_chopp1.jpg');
+}
+#chopp-2 {
+    background-image: url('../images/card_chopp2.jpg');
+}
+#chopp-3 {
+    background-image: url('../images/card_chopp3.jpg');
+}
+#chopp-4 {
+    background-image: url('../images/card_chopp4.jpg');
+}
+#chopp-5 {
+    background-image: url('../images/card_chopp5.jpg');
+}
+#chopp-6 {
+    background-image: url('../images/card_chopp6.jpg');
+}
+#sucos-1 {
+    background-image: url('../images/card_suco1.jpg');
+}
+#sucos-2 {
+    background-image: url('../images/card_suco2.jpeg');
+}
+#sucos-3 {
+    background-image: url('../images/card_suco3.jpg');
+}
+#sucos-4 {
+    background-image: url('../images/card_refri1.jpg');
+}
+#sucos-5 {
+    background-image: url('../images/card_refri2.png');
+}
+#sucos-6 {
+    background-image: url('../images/card_refri3.jpg');
+}
+#sobremesa-1 {
+    background-image: url('../images/card_sobremesa1.jpg');
+}
+#sobremesa-2 {
+    background-image: url('../images/card_sobremesa2.jpg');
+}
+#sobremesa-3 {
+    background-image: url('../images/card_sobremesa3.jpg');
+}
+#sobremesa-4 {
+    background-image: url('../images/card_sobremesa4.jpg');
+}
+#sobremesa-5 {
+    background-image: url('../images/card_sobremesa5.jpg');
+}
+#sobremesa-6 {
+    background-image: url('../images/card_sobremesa6.jpg');
+}
+
+h3 {
+    margin-bottom: 10px;
+    color: red;
+    border-left: 5px solid red;
+    padding-left: 7px;
+    font-size: 24px;
+}
+p {
+    margin-bottom: 10px;
+}
+.bold {
+    font-weight: bold;
+}
+.botao {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    color:red;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: black;
+    border: 1px solid var(--second-text-color);
+}
+.botao:hover {
+    background-color: var(--second-text-color);
+    transition: .5s;
+    border: 1px solid #ffba08;
+}
+footer {
+    background-color: var(--main-bg-color);
+    color: var(--branco);
+    border-top: 3px solid var(--second-text-color);
+    padding: 10px;
+}
+.botaoVoltar {
+    font-size: 20px;
+    margin: 2px 0 4px 0;
+    text-align: right;
+    color: #fff;
+}
+.fas {
+    color: #dc2f02;
+}
+header a {
+    text-decoration: none;
+    color: black;
+}
+

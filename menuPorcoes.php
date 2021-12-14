@@ -21,45 +21,45 @@
     <main class="container">
         <section class="products-container">
             <div class="card">
-                <div class="product-image" id="img-3"></div>
-                <h3>1</h3>
-                <p>...</p>
-                <p>R$ <span class="bold">R$ </span></p>
+                <div class="product-image" id="porcoes-1"></div>
+                <h3>Card Heart</h3>
+                <p>A melhor Fritas com coração da city, acompanha molho especial.</p>
+                <p>R$ <span class="bold"> 39,90 </span></p>
                 <a href="#" class="botao">Comprar</a>
             </div>
             <div class="card">
-                <div class="product-image" id="img-3"></div>
-                <h3>1</h3>
-                <p>...</p>
-                <p>R$ <span class="bold">R$ </span></p>
+                <div class="product-image" id="porcoes-2"></div>
+                <h3>Style BK</h3>
+                <p>Uma crocante porção de fritas com bacon e queijo, acompanha molho especial.</p>
+                <p>R$ <span class="bold"> 42,90 </span></p>
                 <a href="#" class="botao">Comprar</a>
             </div>
             <div class="card">
-                <div class="product-image" id="img-3"></div>
-                <h3>1</h3>
-                <p>...</p>
-                <p>R$ <span class="bold">R$ </span></p>
+                <div class="product-image" id="porcoes-3"></div>
+                <h3>Mixed Class</h3>
+                <p>Um mistão pros friends, fritas, alcatra, frango, bacon, coração, calabreza, acompanha maionese da casa e molho especial.</p>
+                <p>R$ <span class="bold"> 79,90 </span></p>
                 <a href="#" class="botao">Comprar</a>
             </div>
             <div class="card">
-                <div class="product-image" id="img-3"></div>
-                <h3>1</h3>
-                <p>...</p>
-                <p>R$ <span class="bold">R$ </span></p>
+                <div class="product-image" id="porcoes-4"></div>
+                <h3>Porção 4</h3>
+                <p>Você nunca viu...</p>
+                <p>R$ <span class="bold">... </span></p>
                 <a href="#" class="botao">Comprar</a>
             </div>
             <div class="card">
-                <div class="product-image" id="img-3"></div>
-                <h3>1</h3>
-                <p>...</p>
-                <p>R$ <span class="bold">R$ </span></p>
+                <div class="product-image" id="porcoes-5"></div>
+                <h3>Porção 5</h3>
+                <p>Surpreenda-se</p>
+                <p>R$ <span class="bold">... </span></p>
                 <a href="#" class="botao">Comprar</a>
             </div>
             <div class="card">
-                <div class="product-image" id="img-3"></div>
-                <h3>1</h3>
-                <p>...</p>
-                <p>R$ <span class="bold">R$ </span></p>
+                <div class="product-image" id="porcoes-6"></div>
+                <h3>Porção 6</h3>
+                <p>Bora...</p>
+                <p>R$ <span class="bold">... </span></p>
                 <a href="#" class="botao">Comprar</a>
             </div>
             

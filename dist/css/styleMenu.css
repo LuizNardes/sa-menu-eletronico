@@ -1,0 +1,146 @@
+:root {
+    --main-bg-color: #faa307;
+    --main-text-color: #dc2f02;
+    --second-text-color: #f48c06;
+    --second-bg-color: #dc2f02;
+}
+.primary-text {
+    color: var(--main-bg-color);
+}
+.name {
+    color: #faa307;
+}
+.second-text {
+    color: var(--second-text-color)
+}
+.primary-bg {
+    background-color: var(--main-bg-color);
+}
+.secondary-bg {
+    background-color: var(--second-bg-color);
+}
+#wrapper {
+    overflow-x: hidden;
+    background-image: linear-gradient(
+        to top,
+        #ffba08,
+        #faa307,
+        #e85d04,
+        #d00000,
+        #9d0208
+    );
+}
+.rounded-full{
+    border-radius: 50%;
+}
+/*efeito para sidebar sumir quando for aplicado Java Script*/
+#sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -15rem;
+    transition: margin 0.25s ease-out;
+}
+/*sidebar*/
+
+#sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+}
+
+/*id na section de sidebar*/
+
+#sidebar-wrapper .list-group {
+    width: 15rem;
+}
+/*alinhamento no menu*/
+
+#page-content-wrapper {
+    min-width: 100vw;
+}
+
+/*id colocada na parte #wrapper*/
+
+#wrapper .toggled #sidebar-wrapper {
+    margin-left: 0;
+}
+/*efeito de cursor no menu toggle*/
+
+#menu-toggle {
+    cursor: pointer;
+}
+/*afastando o list group*/
+
+.list-group-item {
+    border: none;
+    padding: 20px 30px;
+}
+/*colocando cor na lista com classe active*/
+
+.list-group-item.active {
+    color: red;
+    background-color: transparent;
+    font-weight: bold;
+    border: none;
+}
+
+/*botoes pills*/
+.nav-item {
+    background-color: #ffba08;
+    cursor: pointer;
+}
+.card {
+    background-color: black;
+    color: goldenrod;
+}
+
+@media(min-width: 768px) {
+    #sidebar-wrapper {
+        margin-left: 0;
+    }
+    #page-content-wrapper {
+        min-width: 0;
+        width: 100%;
+    }
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: -15rem;
+    }
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #000;
+}
+
+.nav-link {
+    display: block;
+    padding: .5rem 1rem;
+    color: #000;
+    text-decoration: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+}
+
+.nav-link:hover{
+    color:red;
+}
+
+.second-text:hover {
+    color: red;
+}
+.card-img-top {
+    width: 300px;
+    height: 200px;
+}
+
+.card-text {
+    width: 200px;
+    height: 100px;
+}
+.descricao {
+    text-align: center;
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+footer {
+    background-color: #f1550c;
+    color: var(--branco);
+    border-top: 3px solid #ffba08;
+    padding: 7px;
+}

@@ -31,7 +31,7 @@
             <a href="menuChopps.php" class="list-group-item list-group-iten-action bg-transparent second-text fw-bold">
                 <i class="fas fa-beer me-2"></i> Chopps </a>
             <a href="menuSucos.php" class="list-group-item list-group-iten-action bg-transparent second-text fw-bold">
-                <i class="fas fa-glass-martini"></i> Sucos </a>
+                <i class="fas fa-glass-martini"></i> Sucos e Refrigerantes </a>
             <a href="menuSobremesa.php" class="list-group-item list-group-iten-action bg-transparent second-text fw-bold">
                 <i class="fas fa-ice-cream me-2"></i> Sobremesa </a>
             <a href="login.php" class="list-group-item list-group-iten-action bg-transparent second-text fw-bold">
