@@ -27,7 +27,7 @@ include('php/listarCategorias.php')
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="p-3 mb-2 bg-dark text-white nav-link active" aria-current="page" href="administrativo.html">Nome Loja</a>
+                <a class="p-3 mb-2 bg-dark text-white nav-link active" aria-current="page" href="adm.php">Nome Loja</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#"></a>
@@ -39,9 +39,8 @@ include('php/listarCategorias.php')
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="listarUser.php">Verificar</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Adicionar</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Excluir</a></li>
+                  <li><a class="dropdown-item" href="addUser.php">Adicionar</a></li>
+
                 </ul>
               </li>
 
@@ -50,9 +49,9 @@ include('php/listarCategorias.php')
                   Produtos
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="listarProdutos.php">Verificar</a></li>
+                  <li><a class="dropdown-item" href="listarProduto.php">Verificar</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Adicionar</a></li>
+                  <li><a class="dropdown-item" href="addProduto.php">Adicionar</a></li>
                 </ul>
               </li>
 
@@ -85,11 +84,11 @@ include('php/listarCategorias.php')
             <div class="row gx-5">
                   <div class="col-3 text-center">
                       <label for="iId">ID</label>
-                      <input class="form-control " type="text" name="vId" id="iId" placeholder="Numero ID">
+                      <input class="form-control " type="text" name="vId" id="iId">
                   </div>
                   <div class="col-3 text-center">
                       <label for="iName">Nome</label>
-                      <input class="form-control " type="text" name="vName" id="iName" placeholder="Hamburguer">
+                      <input class="form-control " type="text" name="vName" id="iName">
                   </div>
                   <div class="col-3 text-center">
                       <label for="iTipo">Tipo</label>

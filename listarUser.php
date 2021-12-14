@@ -44,7 +44,7 @@ include('php/listarTipoUser.php')
                   Produtos
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="listarProdutos.php">Verificar</a></li>
+                  <li><a class="dropdown-item" href="listarProduto.php">Verificar</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="#">Adicionar</a></li>
                 </ul>
@@ -150,8 +150,7 @@ if(isset($_GET['nName']) or isset($_GET['nID'])){
       .$whereId
       .$whereName
       .$whereTipo;
-        
-      var_dump($sql);
+      
 
         $result = mysqli_query($conn, $sql);
         mysqli_close($conn);

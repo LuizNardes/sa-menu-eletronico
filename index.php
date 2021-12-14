@@ -23,7 +23,7 @@
 						<span class="focus-input100"></span>
 					</div>
 					<div class="wrap-input100 rs2-wrap-input100 validate-input " data-validate="Type password">
-						<input class="input100" type="text" name="nSenha" placeholder="Senha">
+						<input class="input100" type="password" name="nSenha" placeholder="Senha">
 						<span class="focus-input100"></span>
 					</div>
 					

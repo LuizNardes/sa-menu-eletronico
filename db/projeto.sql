@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 08-Dez-2021 às 01:56
+-- Tempo de geração: 14-Dez-2021 às 01:20
 -- Versão do servidor: 10.4.8-MariaDB
 -- versão do PHP: 7.3.10
 
@@ -160,16 +160,24 @@ INSERT INTO `tipo_usuario` (`id`, `tipo`) VALUES
 CREATE TABLE `usuarios` (
   `id` int(10) UNSIGNED NOT NULL COMMENT 'ID do usuário ',
   `nome` varchar(30) NOT NULL COMMENT 'Nome do usuário',
-  `tipo_usuario` int(10) UNSIGNED NOT NULL COMMENT 'ID do tipo e nível de acesso do de usuário'
+  `tipo_usuario` int(10) UNSIGNED NOT NULL COMMENT 'ID do tipo e nível de acesso do de usuário',
+  `senha` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nome`, `tipo_usuario`) VALUES
-(1, 'luiz.nardes', 1),
-(2, 'suelen.lima', 2);
+INSERT INTO `usuarios` (`id`, `nome`, `tipo_usuario`, `senha`) VALUES
+(1, 'luiz.nardes', 1, 123),
+(2, 'suelen.lima', 2, 123),
+(3, 'tes.te', 1, 0),
+(4, 'tes.te', 1, 0),
+(5, 'tes.te', 1, 123),
+(6, 'tes.te', 1, 123),
+(7, 'tes.te', 1, 123),
+(8, 'tes.te', 1, 123),
+(9, 'tes.te', 1, 123);
 
 --
 -- Índices para tabelas despejadas
@@ -268,7 +276,7 @@ ALTER TABLE `tipo_usuario`
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID do usuário ', AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID do usuário ', AUTO_INCREMENT=10;
 
 --
 -- Restrições para despejos de tabelas
