@@ -170,8 +170,8 @@ if(isset($_GET['nName']) or isset($_GET['nID'])){
                     <th>". $row['id_user'] ."</th>
                     <th>". $row['nome'] ."</th>
                     <th>". descricaoUserByID($row['tipo_usuario']) ."</th>
-                    <th><a href='php/deleteUser.php?id=".$row['id_user']."'>Excluir</a>" 
-                    ." / <a href='alteraUser.php?id=".$row['id_user']."'>Alterar</a></th>
+                    <th><a href='php/deleteUser.php?id_user=".$row['id_user']."'>Excluir</a>" 
+                    ." / <a href='alteraUser.php?id_user=".$row['id_user']."'>Alterar</a></th>
                 </tr>";
             }
         }else{
@@ -213,8 +213,8 @@ if(isset($_GET['nName']) or isset($_GET['nID'])){
                         <th>". $row['id_user'] ."</th>
                         <th>". $row['nome'] ."</th>
                         <th>". descricaoUserByID($row['tipo_usuario']) ."</th>
-                        <th><a href='php/deleteUser.php?id=".$row['id_user']."'>Excluir</a>"
-                        ." / <a href='alteraUser.php?id=".$row['id_user']."'>Alterar</a></th></th>
+                        <th><a href='php/deleteUser.php?id_user=".$row['id_user']."'>Excluir</a>"
+                        ." / <a href='alteraUser.php?id_user=".$row['id_user']."'>Alterar</a></th></th>
                     </tr>";
                 }
             }else{

@@ -74,10 +74,10 @@
 include('php/function.php')
 ?>
 
-<form method="POST" action="php/functionAlteraUser.php?acao=A&id=<?php echo $_GET['id_user']; ?>">
+<form method="POST" action="php/salvaUser.php?acao=A&id_user=<?php echo $_GET['id_user']; ?>">
         <div>
             <label for="iName">Nome: </label>
-            <input type="text" id="iName" name="nName"value="<?php nomeUser($_GET['id_user'])?>">
+            <input type="text" id="iName" name="nName">
         </div>
         <p>
         <p>
