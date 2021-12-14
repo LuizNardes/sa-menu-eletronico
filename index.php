@@ -13,7 +13,7 @@
 	<div class="limiter"> 	
 		<div class="container-login100">
 			<div class="wrap-login100 principal">
-				<form class="login100-form" method="POST" action="php/valida.php">
+				<form class="login100-form" method="POST" action="php/validaLogin.php">
 					<span class="login100-form-title">
 						Login 
 					</span>

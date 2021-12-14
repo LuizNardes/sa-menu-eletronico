@@ -1,71 +1,37 @@
 <?php
-
-    //Recebendo os campos postados pelo form
-    $login = addslashes($_POST["nLogin"]);
-    $senha = addslashes($_POST["nSenha"]);
-    
-    //CHAMADA DE FUNÇÃO: Validar se possui acesso
-
-    $id = validaAcesso($login,$senha);
-
-    var_dump($id);
-    die();
-
-    
-    //DECLARAÇÃO DE FUNÇÃO
-    
-    function validaAcesso($l,$s){
-
-        //Conexão ao BD
-        include("conexao.php");
-
-        //Validar se o usuário existe
-        $sql = "SELECT id FROM usuarios "
-            ." WHERE login = '".$l."'"
-            ." AND senha = '".$s."' ;" ;
-            
-        $result = mysqli_query($conn, $sql);
-        mysqli_close($conn);
-
-        $idUsuario = 0;
-
-        //Valida se retornou linha
-        if(mysqli_num_rows($result) > 0){
-
-            //Array para receber os $result
-            $arrayLogin = array();
-
-            //Descarregar dados no array
-            while($linha = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-                //Gravação no array
-                array_push($arrayLogin,$linha);
-            }
-            
-            return $achou;
-
-            //Validar dados 
-            foreach($arrayLogin as $campo){                    
-                $idUsuario = $campo['id'];
-            }
-
-            return $idUsuario; 
-           
-        }
-    } 
-
-    /*
-        //Valida se retornou linha
-        if (mysqli_num_rows($result) >0) {
-            //ACHOU
-            $achou = true;
-        }else{
-            //NÃO ACHOU
-            $achou = false;
-        }
-        
-        return $achou;
-
-    }
-    */
-         
+	session_start();	
+	//Incluindo a conexão com banco de dados
+	include_once("conexao.php");	
+	//O campo usuário e senha preenchido entra no if para validar
+	if((isset($_POST['nName'])) && (isset($_POST['nSenha']))){
+		$usuario = mysqli_real_escape_string($conn, $_POST['nName']);
+		$senha = mysqli_real_escape_string($conn, $_POST['nSenha']);
+			
+		//Buscar na tabela usuario o usuário que corresponde com os dados digitado no formulário
+		$result_usuario = "SELECT * FROM usuarios WHERE nome = '$usuario' && senha = '$senha' LIMIT 1";
+		$resultado_usuario = mysqli_query($conn, $result_usuario);
+		$resultado = mysqli_fetch_assoc($resultado_usuario);
+		
+		//Encontrado um usuario na tabela usuário com os mesmos dados digitado no formulário
+		if(isset($resultado)){
+			$_SESSION['usuarioId'] = $resultado['id'];
+			$_SESSION['usuarioNome'] = $resultado['nome'];
+			$_SESSION['usuarioNiveisAcessoId'] = $resultado['tipo_usuario'];
+			if($_SESSION['usuarioNiveisAcessoId'] == "1"){
+				header("Location: ../adm.php");
+			}elseif($_SESSION['usuarioNiveisAcessoId'] == "2"){
+				header("Location: ../menu.php");
+			}
+		//Não foi encontrado um usuario na tabela usuário com os mesmos dados digitado no formulário
+		//redireciona o usuario para a página de login
+		}else{	
+			//Váriavel global recebendo a mensagem de erro
+			$_SESSION['loginErro'] = "Usuário ou senha Inválido";
+			header("Location: index.php");
+		}
+	//O campo usuário e senha não preenchido entra no else e redireciona o usuário para a página de login
+	}else{
+		$_SESSION['loginErro'] = "Usuário ou senha inválido";
+		header("Location: index.php");
+	}
 ?>
