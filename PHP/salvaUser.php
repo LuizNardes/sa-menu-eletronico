@@ -1,20 +1,19 @@
 <?php
 
     $nome = $_POST['nName'];
-    $data_nasc = $_POST['nDtNasc'];
-    $login = $_POST['nLogin'];
+    $tipo = $_POST['nTipo'];
     $senha = $_POST['nSenha'];
 
     include("conexao.php");
 
     $sql = "INSERT INTO usuarios"
-    ."(nome, data_nasc, login, senha)"
-    . "VALUES ('".$nome."','".$data_nasc."','".$login."','".$senha."');";
+    ."(nome, tipo_usuario, senha)"
+    . "VALUES ('".$nome."','".$tipo."','".$senha."');";
 
     $result = mysqli_query($conn,$sql);
     mysqli_close($conn);
 
-    header("location:login.php");
+    header("location:../addUser.php");
 
 
 ?>

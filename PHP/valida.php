@@ -8,7 +8,7 @@
 		$senha = mysqli_real_escape_string($conn, $_POST['nSenha']);
 			
 		//Buscar na tabela usuario o usuário que corresponde com os dados digitado no formulário
-		$result_usuario = "SELECT * FROM usuarios WHERE email = '$usuario' && senha = '$senha' LIMIT 1";
+		$result_usuario = "SELECT * FROM usuarios WHERE nome = '$usuario' && senha = '$senha' LIMIT 1";
 		$resultado_usuario = mysqli_query($conn, $result_usuario);
 		$resultado = mysqli_fetch_assoc($resultado_usuario);
 		
@@ -16,23 +16,22 @@
 		if(isset($resultado)){
 			$_SESSION['usuarioId'] = $resultado['id'];
 			$_SESSION['usuarioNome'] = $resultado['nome'];
-			$_SESSION['usuarioNiveisAcessoId'] = $resultado['tipo-usuario'];
-			$_SESSION['usuarioEmail'] = $resultado['email'];
+			$_SESSION['usuarioNiveisAcessoId'] = $resultado['tipo_usuario'];
 			if($_SESSION['usuarioNiveisAcessoId'] == "1"){
-				header("Location: ../administrativo.php");
+				header("Location: ../adm.php");
 			}elseif($_SESSION['usuarioNiveisAcessoId'] == "2"){
-				header("Location: funcionario.php");
+				header("Location: #######");
 			}
 		//Não foi encontrado um usuario na tabela usuário com os mesmos dados digitado no formulário
 		//redireciona o usuario para a página de login
 		}else{	
 			//Váriavel global recebendo a mensagem de erro
 			$_SESSION['loginErro'] = "Usuário ou senha Inválido";
-			header("Location: ../index.php");
+			header("Location: index.php");
 		}
 	//O campo usuário e senha não preenchido entra no else e redireciona o usuário para a página de login
 	}else{
 		$_SESSION['loginErro'] = "Usuário ou senha inválido";
-		header("Location: ../index.php");
+		header("Location: index.php");
 	}
 ?>

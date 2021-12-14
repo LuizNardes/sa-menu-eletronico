@@ -35,7 +35,7 @@ include('php/listarTipoUser.php')
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="listarUser.php">Verificar</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Adicionar</a></li>              
+                  <li><a class="dropdown-item" href="addUser.php">Adicionar</a></li>              
                 </ul>
               </li>
 
@@ -151,6 +151,8 @@ if(isset($_GET['nName']) or isset($_GET['nID'])){
       .$whereName
       .$whereTipo;
         
+      var_dump($sql);
+
         $result = mysqli_query($conn, $sql);
         mysqli_close($conn);
 
@@ -168,7 +170,8 @@ if(isset($_GET['nName']) or isset($_GET['nID'])){
                     <th>". $row['id'] ."</th>
                     <th>". $row['nome'] ."</th>
                     <th>". descricaoUserByID($row['tipo_usuario']) ."</th>
-                    <th><a href='php/deleteProduto.php?id=".$row['id']."'>Excluir</a></th>
+                    <th><a href='php/deleteUser.php?id=".$row['id']."'>Excluir</a>" 
+                    ." / <a href='alteraUser.php?id=".$row['id']."'>Alterar</a></th>
                 </tr>";
             }
         }else{
@@ -183,7 +186,7 @@ if(isset($_GET['nName']) or isset($_GET['nID'])){
       }
    else{
 
-        $sql = "SELECT * FROM usuarios INNER JOIN tipo_usuario ON (usuarios.id = tipo_usuario.id ) WHERE usuarios.nome LIKE '%"."%';";
+        $sql = "SELECT * FROM usuarios INNER JOIN tipo_usuario ON (usuarios.tipo_usuario = tipo_usuario.id ) WHERE usuarios.nome LIKE '%"."%';";
     
        
     
@@ -205,7 +208,8 @@ if(isset($_GET['nName']) or isset($_GET['nID'])){
                         <th>". $row['id'] ."</th>
                         <th>". $row['nome'] ."</th>
                         <th>". descricaoUserByID($row['tipo_usuario']) ."</th>
-                        <th><a href='php/deleteProduto.php?id=".$row['id']."'>Excluir</a></th>
+                        <th><a href='php/deleteUser.php?id=".$row['id']."'>Excluir</a>"
+                        ." / <a href='alteraUser.php?id=".$row['id']."'>Alterar</a></th></th>
                     </tr>";
                 }
             }else{
