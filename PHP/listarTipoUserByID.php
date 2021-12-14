@@ -1,7 +1,6 @@
 <?php
 
 //Função para buscar DESCRIÇÃO do user por ID -----------------------------------------------------------------------------------
-//Função para buscar DESCRIÇÃO do user por ID -----------------------------------------------------------------------------------
 function descricaoUserByID($id){
 
 

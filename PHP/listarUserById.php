@@ -9,7 +9,7 @@ function nomeUser($id){
 
 
     //Montar meu comando SQL
-    $sql = "SELECT * FROM usuarios WHERE id = $id" ;    
+    $sql = "SELECT * FROM usuarios WHERE id_user = $id" ;    
 
     // var_dump($sql);
     // die();

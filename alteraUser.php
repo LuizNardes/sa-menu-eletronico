@@ -19,7 +19,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="p-3 mb-2 bg-dark text-white nav-link active" aria-current="page" >Nome Loja</a>
+                <a class="p-3 mb-2 bg-dark text-white nav-link active" href="adm.php" aria-current="page" >Nome Loja</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#"></a>
@@ -31,7 +31,7 @@
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="listarUser.php">Verificar</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Adicionar</a></li>              
+                  <li><a class="dropdown-item" href="addUser.php">Adicionar</a></li>              
                 </ul>
               </li>
 
@@ -42,7 +42,7 @@
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="listarProdutos.php">Verificar</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Adicionar</a></li>
+                  <li><a class="dropdown-item" href="addProduto.php">Adicionar</a></li>
                 </ul>
               </li>
 
@@ -70,19 +70,16 @@
         </div>
       </nav>
 <br><br><br>
-<form method="POST" action="php/functionAlteraUser.php?acao=A&id=<?php echo $_GET['id']; ?>">
+<?php
+include('php/function.php')
+?>
+
+<form method="POST" action="php/functionAlteraUser.php?acao=A&id=<?php echo $_GET['id_user']; ?>">
         <div>
             <label for="iName">Nome: </label>
-            <input type="text" id="iName" name="nName">
+            <input type="text" id="iName" name="nName"value="<?php nomeUser($_GET['id_user'])?>">
         </div>
         <p>
-        <div>          
-            <label for="iTipo">Tipo: </label>
-            <select name="nTipo" id="iTipo">
-              <option value="1">Administrador</option>
-              <option value="2">Garçom</option>
-            </select>
-        </div>
         <p>
         <div>
             <label for="iSenha">Senha: </label>

@@ -124,7 +124,7 @@ if(isset($_GET['nName']) or isset($_GET['nID'])){
 
         if ($_GET['nID'] != "") {
 
-          $whereId = " AND usuarios.id = ".$_GET['nID'];
+          $whereId = " AND usuarios.id_user = ".$_GET['nID'];
 
         }
 
@@ -145,7 +145,7 @@ if(isset($_GET['nName']) or isset($_GET['nID'])){
 
       $sql = "SELECT * FROM usuarios 
       INNER JOIN tipo_usuario 
-      ON (usuarios.id = tipo_usuario.id) 
+      ON (usuarios.tipo_usuario = tipo_usuario.id) 
       WHERE 1 = 1 "
       .$whereId
       .$whereName
@@ -167,11 +167,11 @@ if(isset($_GET['nName']) or isset($_GET['nID'])){
       
 
             echo "<tr>
-                    <th>". $row['id'] ."</th>
+                    <th>". $row['id_user'] ."</th>
                     <th>". $row['nome'] ."</th>
                     <th>". descricaoUserByID($row['tipo_usuario']) ."</th>
-                    <th><a href='php/deleteUser.php?id=".$row['id']."'>Excluir</a>" 
-                    ." / <a href='alteraUser.php?id=".$row['id']."'>Alterar</a></th>
+                    <th><a href='php/deleteUser.php?id=".$row['id_user']."'>Excluir</a>" 
+                    ." / <a href='alteraUser.php?id=".$row['id_user']."'>Alterar</a></th>
                 </tr>";
             }
         }else{
@@ -186,8 +186,13 @@ if(isset($_GET['nName']) or isset($_GET['nID'])){
       }
    else{
 
-        $sql = "SELECT * FROM usuarios INNER JOIN tipo_usuario ON (usuarios.tipo_usuario = tipo_usuario.id ) WHERE usuarios.nome LIKE '%"."%';";
-    
+    $sql = "SELECT * FROM usuarios 
+    INNER JOIN tipo_usuario 
+    ON (usuarios.tipo_usuario = tipo_usuario.id) 
+    WHERE 1 = 1 "
+    .$whereId
+    .$whereName
+    .$whereTipo;
        
     
         include 'php/conexao.php';
@@ -205,11 +210,11 @@ if(isset($_GET['nName']) or isset($_GET['nID'])){
                 foreach($array as $row){
     
                 echo "<tr>
-                        <th>". $row['id'] ."</th>
+                        <th>". $row['id_user'] ."</th>
                         <th>". $row['nome'] ."</th>
                         <th>". descricaoUserByID($row['tipo_usuario']) ."</th>
-                        <th><a href='php/deleteUser.php?id=".$row['id']."'>Excluir</a>"
-                        ." / <a href='alteraUser.php?id=".$row['id']."'>Alterar</a></th></th>
+                        <th><a href='php/deleteUser.php?id=".$row['id_user']."'>Excluir</a>"
+                        ." / <a href='alteraUser.php?id=".$row['id_user']."'>Alterar</a></th></th>
                     </tr>";
                 }
             }else{
