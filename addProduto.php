@@ -70,7 +70,10 @@
         </div>
       </nav>
 <br><br><br>
-<form method="POST" action="php/functionProdutos.php">
+<?php
+include('php/listarCategorias.php')
+?>
+<form method="POST" action="php/salvaProduto.php">
         <div>
             <label for="iNome">Nome: </label>
             <input type="text" id="iNome" name="nName">

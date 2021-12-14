@@ -223,7 +223,7 @@ if(isset($_GET['vName']) or isset($_GET['vId'])){
                         <th>". $row['qtd'] ."</th>
                         <th>". $row['preco'] ."</th>
                         <th>". descricaoCategoriaByID($row['id_categoria']) ."</th>
-                        <th><a href='php/deleteUser.php?id=".$row['id']."'>Excluir</a></th>
+                        <th><a href='php/deleteProduto.php?id=".$row['id']."'>Excluir</a></th>
                     </tr>";
                 }
             }else{
